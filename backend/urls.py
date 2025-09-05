@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views  # Importar as views
 
 urlpatterns = [
-    path('encomendas/', include('encomendas.urls')),
+    path('', views.home, name='home'),  # Página inicial
     path('admin/', admin.site.urls),
+    path('api/', include('encomendas.urls')),  # Se tiveres URLs na app encomendas
 ]
