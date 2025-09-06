@@ -45,6 +45,10 @@ app.post('/api/encomenda', function(req, res) {
     });
 });
 
-app.listen(3025, () => {
-    console.log('Server On');
+// 🆕 USAR PORTA DO RAILWAY OU LOCAL
+const PORT = process.env.PORT || 3025;
+
+app.listen(PORT, () => {
+    console.log(`🚀 Servidor up na porta ${PORT}`);
+    console.log('📊 Counter atual:', counter);
 });
